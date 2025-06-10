@@ -26,15 +26,15 @@ enum DecoderState {
 #define NEXUS_BIT_TOLERANCE 50
 #define NEXUS_PACKET_BITS_COUNT 36 // data bits in a packet
 
-volatile uint32_t RX_Last_Change = 0;    // global var to store last signal transition timestamp
+uint32_t RX_Last_Change = 0;    // global var to store last signal transition timestamp
 
 // protocol decoder variables
-volatile uint64_t RX_Bits = 0;           // received data bit array
-volatile uint8_t  RX_Bit_Counter = 0;    // received data bit counter
-volatile uint8_t  RX_Pin = 14;           // GPIO pin connected to the receiver - default GPIO14
+uint64_t RX_Bits = 0;           // received data bit array
+uint8_t  RX_Bit_Counter = 0;    // received data bit counter
+uint8_t  RX_Pin = 14;           // GPIO pin connected to the receiver - default GPIO14
 
 volatile uint8_t int_enable = 1;
-volatile DecoderState s = CATCH_SYNC_HIGH;
+DecoderState s = CATCH_SYNC_HIGH;
 
 void config_receiver (uint8_t pin)
 {

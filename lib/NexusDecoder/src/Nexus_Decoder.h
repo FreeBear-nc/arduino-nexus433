@@ -18,5 +18,5 @@ typedef struct NEXUS_DATA {
 
 void config_receiver (uint8_t pin);
 NEXUS_DATA decode_nexus_data (void);
-void IRAM_ATTR Nexus_Decoder (void);
+void Nexus_Decoder (void);
 extern volatile uint8_t int_enable;
