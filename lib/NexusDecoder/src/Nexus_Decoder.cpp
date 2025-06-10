@@ -33,7 +33,7 @@ uint64_t RX_Bits = 0;           // received data bit array
 uint8_t  RX_Bit_Counter = 0;    // received data bit counter
 uint8_t  RX_Pin = 14;           // GPIO pin connected to the receiver - default GPIO14
 
-volatile uint8_t int_enable = 1;
+volatile bool int_enable = 1;
 DecoderState s = CATCH_SYNC_HIGH;
 
 void config_receiver (uint8_t pin)
