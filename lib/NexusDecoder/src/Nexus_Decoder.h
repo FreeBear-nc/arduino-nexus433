@@ -1,3 +1,6 @@
+/* SPDX-License-Identifier: MIT
+   SPDX-FileCopyrightText: © 2022 phpcoder https://github.com/phpcoder
+*/
 /*
   Decoder for Nexus Protocol
 */

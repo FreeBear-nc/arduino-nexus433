@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: MIT
+   SPDX-FileCopyrightText: © 2022 phpcoder https://github.com/phpcoder
+*/
+
 #include "Nexus_Decoder.h"
 
 #define NEXUS_RX_PIN  14    // D5 - GPIO14: pin connected to the 433MHz receiver
