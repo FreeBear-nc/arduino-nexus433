@@ -19,11 +19,11 @@ enum DecoderState {
 
 #define PULSE_LENGTH_FIT(duration, discr, tol) (discr>duration-tol && discr<duration+tol)
 
-#define NEXUS_PULSE_HIGH 490
-#define NEXUS_PULSE_LOW_SYNC 3900
-#define NEXUS_PULSE_LOW_ONE 1950
-#define NEXUS_PULSE_LOW_ZERO 970
-#define NEXUS_BIT_TOLERANCE 50
+#define NEXUS_PULSE_HIGH 500
+#define NEXUS_PULSE_LOW_SYNC 4000
+#define NEXUS_PULSE_LOW_ONE 2000
+#define NEXUS_PULSE_LOW_ZERO 1000
+#define NEXUS_BIT_TOLERANCE 250
 #define NEXUS_PACKET_BITS_COUNT 36 // data bits in a packet
 
 uint32_t RX_Last_Change = 0;    // global var to store last signal transition timestamp
