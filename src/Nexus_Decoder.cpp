@@ -135,6 +135,7 @@ void IRAM_ATTR Nexus_Decoder ()
           RX_Bits |= (1ULL << (NEXUS_PACKET_BITS_COUNT - 1 - RX_Bit_Counter));
         } else {
           // Error in pulse length, cancel packet
+          blink_led(0);
           break;
         }
         blink_led(1);
