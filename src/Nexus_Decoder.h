@@ -12,6 +12,7 @@ typedef struct NEXUS_DATA {
   uint8_t  Battery;
   uint8_t  Channel;
   uint8_t  Humidity;
+  uint8_t  Const;
   float    Temperature;
 } NEXUS_DATA;
 

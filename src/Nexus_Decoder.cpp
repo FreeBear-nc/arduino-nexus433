@@ -65,11 +65,12 @@ NEXUS_DATA decode_nexus_data ()
   NEXUS_DATA nexus_data;
 
   nexus_data.Timestamp   = millis();
-  nexus_data.ID          = (RX_Bits & 0xFF0000000ULL)  >> 28;
-  nexus_data.Battery     = (RX_Bits & 0x008000000ULL)  >> 27;
-  nexus_data.Channel     = ((RX_Bits & 0x003000000ULL) >> 24);
+  nexus_data.ID          = (RX_Bits  & 0xFF0000000ULL) >> 28;
+  nexus_data.Battery     = (RX_Bits  & 0x008000000ULL) >> 27;
+  nexus_data.Channel     = (RX_Bits  & 0x003000000ULL) >> 24;
   nexus_data.Temperature = ((RX_Bits & 0x000FFF000ULL) >> 12) * 0.1f;
-  nexus_data.Humidity    = (RX_Bits & 0x0000000FFULL);
+  nexus_data.Const       = (RX_Bits  & 0x000000F00ULL) >> 8;
+  nexus_data.Humidity    = (RX_Bits  & 0x0000000FFULL);
   return nexus_data;
 }
 
