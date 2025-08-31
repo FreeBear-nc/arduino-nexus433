@@ -71,6 +71,15 @@ NEXUS_DATA decode_nexus_data ()
   nexus_data.Temperature = ((RX_Bits & 0x000FFF000ULL) >> 12) * 0.1f;
   nexus_data.Const       = (RX_Bits  & 0x000000F00ULL) >> 8;
   nexus_data.Humidity    = (RX_Bits  & 0x0000000FFULL);
+  // Validate data is within range
+  if ((nexus_data.Humidity > 100) || (nexus_data.Temperature < -30) || 
+        (nexus_data.Temperature > 50)) {
+    // Relative humidity can never get above 100%, and the only way
+    // to get sub-zero temperatures is to put the sensor in the freezer.
+    // Anything over 50°C, and the electronics are likely to fail.
+    nexus_data.Const = 0;
+  }
+
   return nexus_data;
 }
 
